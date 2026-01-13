@@ -1,6 +1,19 @@
-import pygetwindow
+import pygetwindow as gw
 
 class resize(object):
-    def resize(amount):
-        for i in range(amount):
-            print("test")
+
+    window_names = {"steam"}
+    def resize(arr):
+        for i in arr:
+            try:
+                window = gw.getWindowWithTitle(i)
+            except:
+                print("window not found!")
+                continue    
+            window.resizeTo(800,600)
+            window.moveTo(100,100)
+            
+
+
+
+            
