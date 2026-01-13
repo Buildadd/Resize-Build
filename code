@@ -8,8 +8,8 @@ class resize_windows(object):
     
     
     window_names = ["Steam", "Home - File Explorer", "fortnite"]
-    x = [500, 100,]
-    y = [100, 100,]
+    x = [500, 100]
+    y = [100, 100]
     
     "Make these arrays with the values you want the windows above to be"
 
