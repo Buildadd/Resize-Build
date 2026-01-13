@@ -1,17 +1,41 @@
 import pygetwindow as gw
+import time
+from tqdm import tqdm
 
-class resize(object):
+class resize_windows(object):
 
-    window_names = {"steam"}
-    def resize(arr):
-        for i in arr:
+    "Alt+Tab to see the name of the window and type it in here"
+    
+    
+    window_names = ["Steam", "Home - File Explorer", "fortnite"]
+    x = [500, 100,]
+    y = [100, 100,]
+    
+    "Make these arrays with the values you want the windows above to be"
+
+    length = [500, 500]
+    width = [500, 500]
+
+    total_Tabs = len(window_names)
+
+    def resize(arr, x, y, len, wid, total):
+        
+        for i in range(total):
+            print(arr[i])
+            window = None
             try:
-                window = gw.getWindowWithTitle(i)
+                window = gw.getWindowsWithTitle(str(arr[i]))
+                window[0].resizeTo(len[i],wid[i])
+                window[0].moveTo(x[i],y[i])
             except:
                 print("window not found!")
-                continue    
-            window.resizeTo(800,600)
-            window.moveTo(100,100)
+                
+                continue 
+            
+            print('done')
+            print("")
+
+    resize(window_names, x, y, length, width, total_Tabs)
             
 
 
