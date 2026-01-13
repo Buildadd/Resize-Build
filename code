@@ -1,0 +1,6 @@
+import pygetwindow
+
+class resize(object):
+    def resize(amount):
+        for i in range(amount):
+            print("test")
